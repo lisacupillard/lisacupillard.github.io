@@ -1,0 +1,193 @@
+
+/* ============================= */
+/* POLICE                        */
+/* ============================= */
+
+@font-face {
+    font-family: 'Montserrat Black';
+    src: url('./fonts/Montserrat-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ============================= */
+/* BASE                          */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ============================= */
+/* TITRE                         */
+/* ============================= */
+
+header {
+    width: 100%;
+    padding: 20px 5vw 30px;
+}
+
+h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.25em;
+
+    width: 100%;
+    margin: 0;
+
+    font-family: 'Montserrat Black', sans-serif;
+    font-weight: 900;
+
+    /* Taille responsive */
+    font-size: 10vw;
+
+    line-height: 1.05;
+    white-space: nowrap;
+
+    color: red;
+}
+
+
+/* ============================= */
+/* GRILLE DES PROJETS            */
+/* ============================= */
+
+.nav {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 280px), 1fr)
+    );
+
+    gap: clamp(12px, 2vw, 25px);
+
+    width: 100%;
+    padding: 0 5vw 30px;
+}
+
+
+/* ============================= */
+/* IMAGES                        */
+/* ============================= */
+
+.item-grid {
+    display: grid;
+    position: relative;
+    overflow: hidden;
+
+    text-decoration: none;
+}
+
+.item-grid img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+/* ============================= */
+/* TEXTE SUR LES IMAGES          */
+/* ============================= */
+
+.item-grid h2 {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    margin: 0;
+    padding: 10px;
+
+    color: white;
+    background: hwb(0 0% 0% / 0.63);
+
+    font-family: 'Montserrat Black', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 2rem);
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+
+/* Apparition au survol */
+
+.item-grid:hover h2,
+.item-grid:focus-visible h2,
+.item-grid:focus-within h2 {
+    opacity: 1;
+}
+
+
+/* ============================= */
+/* TABLETTES ET PETITS ÉCRANS    */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding-top: 20px;
+        padding-bottom: 25px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 9vw, 4rem);
+    }
+
+    .nav {
+        grid-template-columns: repeat(
+            auto-fit,
+            minmax(min(100%, 240px), 1fr)
+        );
+    }
+
+}
+
+
+/* ============================= */
+/* TÉLÉPHONES                    */
+/* ============================= */
+
+@media (max-width: 480px) {
+
+    header {
+        padding: 15px 5vw 20px;
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 9vw, 2.8rem);
+        line-height: 1;
+    }
+
+    .nav {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5vw 20px;
+    }
+
+    /* Sur les écrans tactiles, le texte reste visible */
+
+    .item-grid h2 {
+        opacity: 1;
+        font-size: 1.3rem;
+    }
+
+}
