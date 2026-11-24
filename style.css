@@ -1,12 +1,11 @@
 @font-face {
-    font-family: "Humane-Bold";
-    src: url("./fonts/Humane-Bold.ttf");
+    font-family: 'Humane-Bold';
+    src: url('./fonts/Humane-Bold.ttf');
     font-weight: 900;
 }
 * {
     box-sizing: border-box;
 }
-
 body {
     margin: 0;
     padding: 0;
@@ -14,82 +13,64 @@ body {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 img{
     max-width: 100%;
     height: auto;
 }
-
 header {
     width: 100%;
     padding: 0px 5vw 30px;
 }
 
 h1 {
-    font-family: "Humane-Bold", sans-serif;
+    font-family: 'Humane-Bold', sans-serif;
     font-size: 9vw;
     color: red;
     margin: 0;
     line-height: 1;
 }
-
 .home-h1{
     font-size: clamp(32px,32vw,32.5vw);
 }
-
 .nav {
     display: grid;
     grid-template-columns: repeat(
         auto-fit,
         minmax(min(100%, 280px), 1fr)
     );
-
     gap: clamp(12px, 2vw, 25px);
-
     width: 100%;
     padding: 0 5vw 30px;
 }
-
 .item-grid {
     display: grid;
     position: relative;
     text-decoration: none;
 }
-
 .item-grid img {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-
     display: block;
     width: 100%;
     height: auto;
 }
-
 .item-grid h2 {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-
     display: grid;
     align-items: center;
     justify-items: center;
-
     margin: 0;
     padding: 10px;
-
     color: white;
     background: hwb(0 0% 0% / 0.63);
-
     font-family: 'Montserrat Black', sans-serif;
     font-size: clamp(1rem, 2.5vw, 2rem);
     text-align: center;
-
     opacity: 0;
     transition: opacity 0.4s ease;
 }
-
-
 /* Apparition au survol */
-
 .item-grid:hover h2,
 .item-grid:focus-visible h2,
 .item-grid:focus-within h2 {
@@ -107,11 +88,9 @@ h1 {
 /*droite*/
 .page-projet {
     display: grid;
-
     /* Deux colonnes : texte à gauche, images à droite */
     grid-template-columns: 30% 60%;
     gap: 130px;
-
     /* Marges autour de toute la page */
     padding: 40px 5vw 50%;
     align-items: start;
@@ -122,53 +101,39 @@ h1 {
     flex-direction: column;
     min-height: 100px;
 }
-
 /* Texte présentation */
 .projet-description {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     margin: 0;
 }
-
 /* les lignes rouge et le tout petit texte */
-
 .projet-type {
     display: flex;
     flex-direction: column;
-
     gap: 12px;
-
     margin-top: 50px;
     margin-bottom: 30px;
 }
-
 .projet-type hr {
     display: block;
-
     width: 100%;
     height: 1px;
-
     border: none;
-    background-color: red;
-
+    background-color: red
     margin: 0;
 }
-
 .projet-type p {
     color: red;
     text-align: center;
-
     font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 2px;
-
     margin: 0;
 }
-
 /* Grand titre */
-
 .projet-titre {
-    font-family: "Humane-Bold", sans-serif;
+    font-family: 'Humane-Bold', sans-serif;
     font-size: 150px
     color: red;
     text-transform: uppercase;
@@ -176,59 +141,42 @@ h1 {
     margin: 0;
     overflow-wrap: break-word;
 }
-
 /*la droite*/
 .projet-galerie {
     display: grid;
-
     grid-template-columns: repeat(2, minmax(0, 2fr));
-
     gap: 50px;
-
     align-content: start;
     min-width: 0;
 }
-
 /* Images */
-
 .projet-galerie img {
     display: block;
-
     width: 100%;
-
 }
 .projet-galerie .visuel-large {
     grid-column: 1 / -1;
 }
-
 /*format tel*/
-
 @media (max-width: 700px) {
-
     .page-projet {
         grid-template-columns: 1fr;
         gap: 40px;
-
         padding: 30px 5vw;
     }
-
     .projet-texte {
         min-height: auto;
     }
-
     .projet-titre {
         font-size: 20vw;
         margin-top: 30px;
     }
-
     .projet-galerie {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-
 }
-
 .contact-bandeau {
-    background-color: black;
+    background-color: rgb(255, 0, 0);
     width: 100%;
     height: 50vh;
     padding: 25px 5vw;
@@ -243,12 +191,10 @@ h1 {
     font-size: 14px;
     transition: 0.3s;
 }
-
 .contact-bouton:hover {
     background-color: red;
     color: white;
 }
-
 .contact-bas {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
@@ -258,16 +204,14 @@ h1 {
     padding: 30px 5vw 40px;
     align-items: start;
 }
-
 .contact-titre {
-    font-family: "Humane-Bold", sans-serif;
+    font-family: 'Humane-Bold', sans-serif;
     font-size: 260px;
     color: red;
     text-transform: uppercase;
     line-height: 0.8;
     margin: 0;
 }
-
 .contact-infos {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -280,7 +224,6 @@ h1 {
 .contact-infos a:hover {
     color: red;
 }
-
 @media (max-width: 700px) {
 
     .contact-bandeau {
@@ -298,5 +241,58 @@ h1 {
     .contact-titre {
         font-size: 25vw;
     }
+}
+/* le bas de la page avec le nom du créateur de la typo*/
+.apropos-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.footer p{
+    text-align: center;
+    font-size: 9px;
+    font-weight: 300;
+    
+}
 
+
+/* MENU */
+
+.menuopen .menu{
+    display: grid;
+}
+
+
+.openBtn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    
+}
+
+.burger-icon{
+    display: grid;
+    gap:4px;
+    width:48px;
+}
+.burger-icon span{
+    background: #000000;
+    height:3px;
+
+}
+
+
+.menu{
+   position:fixed;
+    top:68px;
+    right:20px; 
+    display: none; 
+}
+.menu > *{
+    line-height: 40px;
+    text-align: right;
+    background: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    color:currentColor;
+    color: rgb(0, 0, 0);
+    
 }
